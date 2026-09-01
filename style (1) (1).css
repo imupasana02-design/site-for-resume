@@ -1,0 +1,304 @@
+/* =========================================================
+   UPASANA UDAYAN — personal site
+   Token system
+   Color:    --ink #12262A (near-black teal), --bg #EEF1EC (cool paper),
+             --panel #E2E7DF, --accent #C8722E (burnt amber), --accent-2 #4C6B5E (moss)
+   Type:     Display/serif  -> "Fraunces"      (headings, wordmark)
+             UI/mono        -> "JetBrains Mono" (nav, labels, meta)
+             Body/sans      -> "Work Sans"       (paragraph text)
+   Layout:   Fixed left rail (wordmark + nav) / scrolling right column of content.
+             Left-aligned throughout, hairline rule as the one structural device.
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #EEF1EC;
+  color: #12262A;
+  font-family: "Work Sans", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #C8722E;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 114, 46, 0.35);
+}
+
+a:hover, a:focus {
+  border-bottom-color: #C8722E;
+}
+
+a:focus, button:focus {
+  outline: 2px solid #4C6B5E;
+  outline-offset: 2px;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.4em 0;
+  color: #12262A;
+}
+
+h1 { font-size: 2.6rem; }
+h2 { font-size: 1.5rem; margin-top: 2.2em; }
+h3 { font-size: 1.1rem; margin-top: 1.4em; }
+
+p { margin: 0 0 1em 0; max-width: 62ch; }
+
+ul { margin: 0 0 1em 0; padding-left: 1.1em; }
+li { margin-bottom: 0.4em; }
+
+.meta, nav, .eyebrow, .tag {
+  font-family: "JetBrains Mono", "Courier New", monospace;
+}
+
+/* ---------- layout shell ---------- */
+
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.rail {
+  width: 240px;
+  flex: 0 0 240px;
+  padding: 2.4rem 1.6rem;
+  border-right: 1px solid #12262A;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  height: 100vh;
+}
+
+.rail .wordmark {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 0.15rem;
+  border-bottom: none;
+  color: #12262A;
+}
+
+.rail .role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: #4C6B5E;
+  display: block;
+  margin-bottom: 2.4rem;
+}
+
+.rail nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rail nav li {
+  margin-bottom: 0.65rem;
+}
+
+.rail nav a {
+  border-bottom: none;
+  font-size: 0.85rem;
+  color: #12262A;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.rail nav a[aria-current="page"] {
+  color: #C8722E;
+  font-weight: 600;
+}
+
+.rail nav a:hover {
+  color: #C8722E;
+}
+
+.rail .contact-mini {
+  margin-top: 3rem;
+  font-size: 0.78rem;
+  color: #4C6B5E;
+}
+
+.main {
+  flex: 1 1 auto;
+  padding: 3.2rem 3rem 5rem 3.4rem;
+  max-width: 860px;
+}
+
+/* ---------- home hero ---------- */
+
+.hero {
+  display: flex;
+  gap: 2.2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.monogram {
+  flex: 0 0 auto;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background-color: #C8722E;
+  color: #EEF1EC;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .eyebrow {
+  font-size: 0.78rem;
+  color: #4C6B5E;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.lede {
+  font-size: 1.12rem;
+  color: #234;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid #12262A;
+  margin: 2.4rem 0;
+}
+
+/* ---------- cards / grids ---------- */
+
+.grid-two {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  margin-top: 1rem;
+}
+
+.panel {
+  background-color: #E2E7DF;
+  border: 1px solid #12262A;
+  padding: 1.3rem 1.4rem;
+  flex: 1 1 260px;
+}
+
+.panel h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+/* ---------- project entries ---------- */
+
+.project {
+  padding: 1.6rem 0;
+  border-top: 1px solid #12262A;
+}
+
+.project:first-of-type {
+  border-top: none;
+}
+
+.project .tag {
+  font-size: 0.72rem;
+  color: #4C6B5E;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.project h2 {
+  margin-top: 0.1em;
+}
+
+.project .stack {
+  font-size: 0.82rem;
+  color: #4C6B5E;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.status {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.5rem;
+  background-color: #4C6B5E;
+  color: #EEF1EC;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+/* ---------- validator badge ---------- */
+
+.validator {
+  margin-top: 3.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid #12262A;
+  font-size: 0.78rem;
+  color: #4C6B5E;
+}
+
+.validator img {
+  vertical-align: middle;
+  border: none;
+}
+
+.validator a {
+  border-bottom: none;
+}
+
+/* ---------- footer ---------- */
+
+.page-footer {
+  margin-top: 3rem;
+  font-size: 0.78rem;
+  color: #4C6B5E;
+}
+
+/* ---------- responsive ---------- */
+
+@media screen and (max-width: 720px) {
+  .shell {
+    flex-direction: column;
+  }
+  .rail {
+    width: auto;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #12262A;
+    padding: 1.6rem;
+  }
+  .rail nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+  }
+  .rail .contact-mini {
+    margin-top: 1.2rem;
+  }
+  .main {
+    padding: 2.2rem 1.4rem 3rem 1.4rem;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 2.1rem;
+  }
+}
